@@ -1,0 +1,184 @@
+h1, .nombre_contacto {
+    font-family: 'Chau Philomene One', sans-serif;
+    color: var(--color-text-btn-dark);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg-app: #FFFFFF;
+    --color-bg-grid: #DEE2EB;
+    --color-text-btn-dark: #3C4457;
+    --color-btn-darker: #1d222f;
+    --color-card-btn-white: #FFFFFF;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px;
+
+    background-image: url("../imagenes/Backgroung_image.png"); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+}
+
+.contenedor {
+    background-color: var(--color-bg-app);
+    width: 100%;
+    max-width: 1600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header h1{
+    font-size: 80px;
+    letter-spacing: 1px;
+}
+
+.divisor_header {
+    border: none;
+    height: 3px;
+    background-color: var(--color-text-btn-dark);
+    margin-bottom: 20px;
+}
+
+.controles {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.controles_busqueda {
+    flex-grow: 1;
+}
+
+#input_busqueda{
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 2px solid var(--color-text-btn-dark);
+    font-size:15px;
+    color: var(--color-text-btn-dark);
+    background-color: var(--color-card-btn-white);
+    border-radius: 15px;
+}
+
+.boton_principal{
+    background-color: var(--color-text-btn-dark);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.boton_principal:hover {
+    background-color: var(--color-btn-darker);
+    opacity: 0.9;
+}
+
+.contenedor_principal{
+
+}
+
+.contenedor_contactos{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta_contacto {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid var(--color-text-btn-dark);
+}
+
+.contacto_body {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contacto_avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #cbd5e1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #475569;
+    flex-shrink: 0;
+}
+
+.info_contacto {
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+}
+
+.telefono_contacto,
+.email_contacto, 
+.compañia_contacto, 
+.notas_contacto {
+    font-size: 0.9rem;
+    color: #64748b; 
+}
+
+.acciones_contacto {
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 12px;
+}
+
+.btn_editar, .btn_eliminar {
+    background-color: var(--color-text-btn-dark);
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;    
+    color: white;
+}
+
+.btn_editar:hover {
+    background-color: #85a4cd;
+    opacity: 0.9;
+}
+
+.btn_eliminar:hover {
+    background-color: #c34848; 
+    color: #3c0c0c;     
+    opacity: 0.9;     
+}
+
