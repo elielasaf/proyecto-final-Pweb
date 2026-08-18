@@ -1,10 +1,13 @@
-Proyecto final de PWeb.
+**<h1>Proyecto final de PWeb.</h1>**
 
-en este  repositorio se alberga nuestro directorio de contactos que estaremos trabajando como proyecto final en Programación Web.
+En este  repositorio se alberga nuestro directorio de contactos que estaremos trabajando como proyecto final en Programación Web.
 
-Estudiantes:
+**<h2>Estudiantes:</h2>**
 
-Eliel Diaz 
-Llamel Angomas
-Juan Jimenez
-Aaron "apellido"
+Eliel Díaz | 2025-****
+
+Llamel Angomás | 2025-1055
+
+Juan Jiménez | 2025-1030
+
+Aaron Montero | 2025-1056
