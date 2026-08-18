@@ -11,7 +11,7 @@ h1, h2 {
     box-sizing: border-box;
 }
 
-/*Variables de los nombres*/
+/*Variables de los colores*/
 :root {
     --color-bg-app: #FFFFFF;
     --color-text-btn-dark: #3C4457;
