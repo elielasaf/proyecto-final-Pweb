@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Fuentes de la pagina-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Directorio de Contactos</title>
+</head>
+<body>
+    <main class="contenedor">
+        <!--Header que tiene el titulo de la pagina y el icono de usuario-->
+        <header class="header">
+            <h1>DIRECTORIO DE CONTACTOS</h1>
+            <div class="icono_usuario">
+                <img src="./imagenes/icono_usuario.png">
+            </div>
+        </header>
+
+        <!--Linea separadora en el header-->
+        <hr class="divisor_header">
+
+        <div class="contenedor_azul">
+            <!--Input y boton de busqueda de nombre-->
+            <section class="controles">
+                <div class="controles_busqueda">
+                    <input type="text" id="input_busqueda" placeholder="  🔍︎ Buscar contacto por nombre...">
+                    <button id="boton_nuevo_contacto" class="boton_principal">Nuevo Contacto</button>
+                </div>
+            </section>
+
+            <!--Contenedor principal blanca-->
+            <section class="contenedor_principal" id="contenedor_contactos">
+
+                <template id="molde_tarjeta">
+                    <!--Tarjeta de los contactos-->
+                    <article class="tarjeta_contacto">
+
+                        <div class="contacto_body">
+                            <div class="contacto_avatar">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+
+                            <!--Placeholder de donde esta la informacion del contacto, cambialo una vez tengas el codigo hecho-->
+                            <div class="info_contacto">
+                                <h2 class="nombre_contacto">Nombre</h2>
+                                <p class="telefono_contacto">Teléfono</p>
+                                <p class="email_contacto">Correo</p>
+                                <p class="empresa_contacto">Empresa</p>
+                                <p class="notas_contacto">Notas</p>
+                            </div>
+                        </div>
+
+
+                        <!--Botones de editar y eliminar-->
+                        <div class="acciones_contacto">
+                            <button class="btn_editar">
+
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align: middle; margin-right: 4px;">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+                                </svg>
+                                Editar
+                            </button>
+
+                            <button class="btn_eliminar">
+
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align: middle; margin-right: 4px;">
+                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                                </svg>
+                                Eliminar
+                            </button>
+                        </div>
+                    </article>
+                </template>
+        </div>
+        </section>
+
+        <!--Formulario de editar contacto-->
+        <div class="overlay_modal" id="contacto_modal">
+            <div class="contenido_modal">
+                <h2 id="titulo_modal">NUEVO CONTACTO</h2>
+
+                <form id="form_contacto">
+                    <div class="form_grupo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre_input" placeholder="Ej: Carlos Perez">
+                    </div>
+
+                    <div class="form_grupo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" id="telefono_input" placeholder="Ej: 222-222-2222">
+                    </div>
+
+                    <div class="form_grupo">
+                        <label for="correo">Correo</label>
+                        <input type="text" id="correo_input" placeholder="Ej: carlosperez@email.com">
+                    </div>
+
+                    <div class="form_grupo">
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa_input" placeholder="Ej: InnoTech Solutions">
+                    </div>
+
+                    <div class="form_grupo">
+                        <label for="notas">Notas</label>
+                        <textarea id="notas" rows="3" placeholder="Notas adicionales..."></textarea>
+                    </div>
+
+                    <div class="acciones_modal">
+                        <button type="button" id="btn_guardar_contacto" class="btn_primario">Guardar cambios</button>
+                        <button type="button" id="btn_cancelar_contacto" class="btn_secundario">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--Pop-up de eliminar contacto-->
+        <div class="overlay_modal" id="eliminar_modal">
+            <div class="contenido_modal_eliminar">
+                <h2>CONFIRMAR ELIMINACIÓN</h2>
+                <p>¿Estás seguro de que deseas eliminar permanentemente a <span id="eliminar_nombre_contacto">este contacto</span>?</p>
+
+                <div class="acciones_modal">
+                    <button type="button" id="btn_confirmar_eliminar" class="btn_primario">Eliminar</button>
+                    <button type="button" id="btn_cancelar_eliminar" class="btn_secundario">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
+
+<script src="app.js"></script>
