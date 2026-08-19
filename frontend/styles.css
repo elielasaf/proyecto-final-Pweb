@@ -1,0 +1,353 @@
+/*Formato del titulo y los nombres del contacto*/
+h1, h2 {
+    font-family: 'Chau Philomene One', sans-serif;
+    color: var(--color-text-btn-dark);
+}
+
+/*Margenes*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Variables de los nombres*/
+:root {
+    --color-bg-app: #FFFFFF;
+    --color-text-btn-dark: #3C4457;
+    --color-btn-darker: #1d222f;
+    --color-card-btn-white: #FFFFFF;
+}
+
+/*Formato del cuerpo (importante aqui la fuente de letra, y la imagen de fondo)*/
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px;
+
+    background-image: url("./imagenes/Backgroung_image.png"); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+}
+
+/*Contenedor blanco*/
+.contenedor {
+    background-color: var(--color-bg-app);
+    width: 100%;
+    max-width: 1600px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/*Formato header*/
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+/*Formato del icono del titulo*/
+.icono_usuario img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*Formato titulo*/
+.header h1{
+    font-size: 80px;
+    letter-spacing: 1px;
+}
+
+/*Formato del divisor del header*/
+.divisor_header {
+    border: none;
+    height: 3px;
+    background-color: var(--color-text-btn-dark);
+    margin-bottom: 20px;
+}
+
+/*Formato de los controles*/
+.controles_busqueda {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+/*Formato del input*/
+#input_busqueda{
+    width: 85%;
+    padding: 12px 15px 12px 40px;
+    border: 2px solid var(--color-text-btn-dark);
+    font-size:15px;
+    color: var(--color-text-btn-dark);
+    background-color: var(--color-card-btn-white);
+    border-radius: 15px;
+}
+
+/*Formato del boton "Nuevo Contacto"*/
+.boton_principal{
+    background-color: var(--color-text-btn-dark);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.boton_principal:hover {
+    background-color: var(--color-btn-darker);
+    opacity: 0.9;
+}
+
+/*Formato de las tarjetas de los contactos*/
+.contenedor_principal{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    overflow-y: auto; 
+    padding-right: 10px;
+}
+
+.tarjeta_contacto {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid var(--color-text-btn-dark);
+}
+
+/*Grid azul donde estan los contactos*/
+.contenedor_azul {
+    background-color: #e2e8f0; 
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    overflow: hidden; 
+}
+
+/*Formato del contenido que esta dentro de la tarjeta*/
+.contacto_body {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contacto_avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #cbd5e1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #475569;
+    flex-shrink: 0;
+}
+
+.info_contacto {
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+}
+
+.telefono_contacto,
+.email_contacto, 
+.compañia_contacto, 
+.notas_contacto {
+    font-size: 0.9rem;
+    color: #64748b; 
+}
+
+/*Formato de los botones de la tarjeta*/
+.acciones_contacto {
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 12px;
+}
+
+/*Aqui estan incluidos los botones de los pop-ups*/
+.btn_editar, .btn_eliminar, .btn_primario, .btn_secundario {
+    background-color: var(--color-text-btn-dark);
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;    
+    color: white;
+}
+
+.btn_editar:hover,
+.btn_primario:hover {
+    background-color: #85a4cd;
+    opacity: 0.9;
+}
+
+.btn_secundario:hover,
+.btn_eliminar:hover {
+    background-color: #c34848; 
+    color: #3c0c0c;     
+    opacity: 0.9;     
+}
+
+/*Formato de los pop-ups*/
+.overlay_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.362); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+.contenido_modal_eliminar,
+.contenido_modal {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/*Titulo de los pop'ups*/
+.contenido_modal h2 {
+    font-size: 1.5rem;
+}
+
+/*Formulario del pop-up de editar*/
+.form_grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.form_grupo label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--color-text-btn-dark);
+}
+
+.contenido_modal_eliminar,
+.form_grupo input,
+.form_grupo textarea {
+    padding: 10px;
+    border: 1px solid var(--color-text-btn-dark);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+/*Formatos especificos del pop-up de eliminar*/
+.contenido_modal_eliminar h2 {
+    text-align: center;
+}
+
+.contenido_modal_eliminar p {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #222a35;
+}
+
+.acciones_modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Estilos para notificaciones y estados de carga */
+.toast-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-text-btn-dark);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeInOut 3.5s ease forwards;
+}
+
+.toast-success {
+    background-color: #2e7d32;
+}
+
+.toast-error {
+    background-color: #c62828;
+}
+
+.loading-state {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-text-btn-dark);
+    grid-column: 1 / -1;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    15% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    85% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}

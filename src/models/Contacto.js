@@ -13,6 +13,7 @@ const contactoSchema = new mongoose.Schema({
     },
     correo: {
         type: String,
+        required: [true, 'El campo correo es obligatorio'],
         trim: true,
         lowercase: true
     },
